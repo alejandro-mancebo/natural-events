@@ -30,17 +30,18 @@ export const AddDisaster = () => {
   const form = useForm<Disaster>({
     defaultValues: {
       name: "",
-      street1: "",
-      street2: "",
-      city: "Toronto",
-      country: "Canada",
+      latitude: "",
+      longitude: "",
+      // coordinates: [],
+      // city: "Toronto",
+      // country: "Canada",
       category: "",
       description: ""
     },
   })
 
   useEffect(() => {
-    localStorage.setItem('DisasterData', JSON.stringify(disasterList))
+    // localStorage.setItem('DisasterData', JSON.stringify(disasterList))
   }, [])
 
 
@@ -56,37 +57,52 @@ export const AddDisaster = () => {
 
   const onSubmitHandle = (data: Disaster) => {
 
-    const address = data.street1 && '+' && data.street2 && '+Toronto+Ontario+Canada'
+    // const address = data.street1 && '+' && data.street2 && '+Toronto+Ontario+Canada'
 
-    axios.get(`https://geocode.maps.co/search?q=${address}`)
-      .then(response => {
+    // axios.get(`https://geocode.maps.co/search?q=${address}`)
+    //   .then(response => {
 
-        const idNumber: number = Object.keys(dataDisaster).length + 1
+    //     const idNumber: number = Object.keys(dataDisaster).length + 1
 
-        const objectAddress: Disaster = {
-          _id: idNumber,
-          name: data.name,
-          street1: data.street1,
-          street2: data.street2,
-          latitude: response.data[0].lat,
-          longitude: response.data[0].lon,
-          city: "Toronto",
-          country: "Canada",
-          category: data.category,
-          description: data.description
-        }
-        disasterList.push(objectAddress)
-        localStorage.setItem('DisasterData', JSON.stringify(disasterList))
+    //     const objectAddress: Disaster = {
+    //       _id: idNumber,
+    //       name: data.name,
+    //       street1: data.street1,
+    //       street2: data.street2,
+    //       latitude: response.data[0].lat,
+    //       longitude: response.data[0].lon,
+    //       city: "Toronto",
+    //       country: "Canada",
+    //       category: data.category,
+    //       description: data.description
+    //     }
+    //     disasterList.push(objectAddress)
+    //     localStorage.setItem('DisasterData', JSON.stringify(disasterList))
 
-        // console.log(response.data)
-        // console.log(response.data[0].lat, response.data[0].lon)
-        // console.log(dataDisaster)
-        // console.log(data.category)
-        })
-        .catch(errors => {
-          console.log(errors)
-        })
+    //     console.log(response.data)
+    //     console.log(response.data[0].lat, response.data[0].lon)
+    //     console.log(dataDisaster)
+    //     console.log(data.category)
+    //     })
+    //     .catch(errors => {
+    //       console.log(errors)
+    //     })
 
+    const idNumber: number = Object.keys(dataDisaster).length + 1
+
+    const objectAddress: Disaster = {
+      _id: idNumber,
+      name: data.name,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      coordinates: [Number(data.latitude), Number(data.longitude)],
+      category: data.category,
+      description: data.description
+    }
+    disasterList.push(objectAddress)
+    localStorage.setItem('DisasterData', JSON.stringify(disasterList))
+
+    console.log(data)
 
     form.reset()
     } 
@@ -106,21 +122,21 @@ export const AddDisaster = () => {
         </div>
 
         <div>
-          <label htmlFor="street1">First Street</label>
+          <label htmlFor="latitude">Latitude</label>
           <input
             className=" text-black border-gray-500"
             type="text"
-            id="street1"
-            {...register('street1')}
+            id="latitude"
+            {...register('latitude')}
           />
         </div>
         <div>
-          <label htmlFor="street2">Second Street</label>
+          <label htmlFor="longitude">Longitude</label>
           <input
             className="text-black"
             type="text"
-            id="street2"
-            {...register('street2')}
+            id="longitude"
+            {...register('longitude')}
           />
         </div>
         <div>
@@ -162,10 +178,10 @@ export const AddDisaster = () => {
                 {disaster.category} 
               </li>
               <li>
-                {disaster.street1}
+                {disaster.latitude}
               </li>
               <li>
-                {disaster.street2}
+                {disaster.longitude}
               </li>
             </ul>
           )

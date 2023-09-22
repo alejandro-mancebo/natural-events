@@ -1,0 +1,40 @@
+{
+  "dataDisaster": [
+    {
+      "_id": 0,
+      "name": "Tree block the street",
+      "street1": "Yonge St.",
+      "street2": "Eglinton Ave W",
+      "latitude": "43.70672",
+      "longitude": "-79.39832",
+      "city": "Toronto",
+      "country": "Canada",
+      "category": "tornadoes",
+      "description": ""
+    },
+    {
+      "_id": 1,
+      "name": "Flooded bridge",
+      "street1": " Lawrence Ave W",
+      "street2": "Hickory Tree Rd",
+      "latitude": "43.69896",
+      "longitude": "-79.52097",
+      "city": "Toronto",
+      "country": "Canada",
+      "category": "floods",
+      "description": ""
+    },
+    {
+      "_id": 2,
+      "name": "High tension cables block the street",
+      "street1": " Scarborough Golf Club Rd",
+      "street2": "Ellesmere Rd",
+      "latitude": "43.77701",
+      "longitude": "-79.22159",
+      "city": "Toronto",
+      "country": "Canada",
+      "category": "tornadoes",
+      "description": ""
+    }
+  ]
+}

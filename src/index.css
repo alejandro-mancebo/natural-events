@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  /* color-scheme: light; */
+  color: rgba(255, 255, 255, 0.87);
+  /* color: grey; */
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Arial, Helvetica, sans-serif;
+}
+
+.header {
+  padding: 10px;
+  background-color: rgb(97, 0, 0, 0.8);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header h1 {
+  font-size: 25px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.map {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Marker Icons */
+.fire-location-icon {
+  font-size: 2rem;
+  color: red;
+}
+
+.storm-location-icon {
+  font-size: 2rem;
+  color: #046582;
+}
+
+.volcano-location-icon {
+  font-size: 2rem;
+  color: #433520;
+}
+
+.iceberg-location-icon {
+  font-size: 2rem;
+  color: #4a47a3;
+}
+
+/* Location Info Display */
+
+.location-info {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
+
+/* Legend Display */
+.legend {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+  width: 150px;
+  min-height: 150px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+  z-index: 100;
+}
+
+.legend ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.legend li {
+  padding: 5px 0;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 200px;
+  height: auto;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.main-title {
+  font-size: 60px;
+  font-family: 'Croissant One', cursive;
+}

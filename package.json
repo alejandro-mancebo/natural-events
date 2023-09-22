@@ -21,10 +21,10 @@
     "react": "^16.12.0",
     "react-csv-downloader": "^1.5.0",
     "react-dom": "^16.12.0",
-    "react-google-maps": "^7.3.0",
+    "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.46.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.3.0",
     "react-select": "^5.7.5",
     "ts-overlapping-marker-spiderfier": "^1.0.3",
     "vite": "^4.4.5"
